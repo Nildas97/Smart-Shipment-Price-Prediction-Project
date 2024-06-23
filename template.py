@@ -1,11 +1,14 @@
+# importing libraries
 import os
 from pathlib import Path
 import logging
 
+# logging format
 logging.basicConfig(
     level=logging.INFO, format="[%(asctime)s: %(levelname)s]: %(message)s"
 )
 
+# while loop
 while True:
     project_name = input("Enter your project name: ")
     if project_name != "":
@@ -40,14 +43,19 @@ list_of_files = [
     "exception.py",
 ]
 
-
+# checking all the files in the list of files
 for filepath in list_of_files:
     filepath = Path(filepath)
+    # splitting file directory and file name
     filedir, filename = os.path.split(filepath)
+    # if file directory is empty
     if filedir != "":
+        # create file directory
         os.makedirs(filedir, exist_ok=True)
         logging.info(f"Creating a new directory at : {filedir} for file: {filename}")
-    if (not os.path.exists(filepath)) or (os.path.getsize(filepath) == 0):
+    # if filepath does not exists
+    if (not os.path.exists(filepath)) or (os.path.getsize(filepath) == 0): 
+        # open and create files and folder in filepath
         with open(filepath, "w") as f:
             pass
             logging.info(f"Creating a new file: {filename} for path: {filepath}")
