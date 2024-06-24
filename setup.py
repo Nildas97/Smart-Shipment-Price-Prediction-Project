@@ -5,11 +5,6 @@ from typing import List
 HYPHEN_E_DOT = "-e ."
 
 
-# defining function to fetch the requirements.txt
-# takes input a filepath as string
-# gives output a list of strings
-
-
 def get_requirements(filepath: str) -> List[str]:
     # create an empty list
     requirements = []
@@ -28,9 +23,9 @@ def get_requirements(filepath: str) -> List[str]:
             requirements.remove(HYPHEN_E_DOT)
 
 
-setup(name='ML_Application_Project',
+setup(name='Smart_Shipment_Project',
       version='0.0.1',
-      description='Machine Learning Application Project',
+      description='Smart Shipment Price Prediction Project',
       author='Nilutpal Das',
       author_email='nilutpaldas992@gmail.com',
       packages=find_packages(),
