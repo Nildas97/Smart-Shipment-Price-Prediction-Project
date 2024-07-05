@@ -1,4 +1,7 @@
 pandas
 flask
 numpy
+pymongo
+python-dotenv
+PyYAML
 -e . 
