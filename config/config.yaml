@@ -1,0 +1,13 @@
+training_pipeline_config:
+  pipeline_name: artifact
+  artifact_dir: artifact
+
+data_ingestion_config:
+  database_name: Machine_Learning
+  collection_name: Dataset
+  data_ingestion: data_ingestion
+  raw_data_dir: raw_data
+  ingested_data_dir: ingested_data
+  ingested_train_dir: train
+  ingested_test_dir: test
+  

@@ -5,6 +5,7 @@ import json
 import os
 from schema import write_schema_yaml
 from dotenv import load_dotenv
+from src.logger import logging
 
 # current working directory
 ROOT_DIR = os.getcwd()
@@ -63,7 +64,11 @@ if __name__ == "__main__":
 
     except pymongo.errors.OperationFailure as op_fail:
         print(f"Operation failed: {op_fail}")
-
+        
     finally:
         # close the mongodb collection
         client.close()
+
+    logging.info("Data pushed to Mongodb")
+    
+

@@ -1,0 +1,21 @@
+1. Data Ingestion Pipeline
+
+a. Config.yaml - completed
+b. Constant file - completed
+c. Config entity - completed
+d. Artifact entity - completed
+e. Helper functions - completed
+f. Data ingestion file
+g. Training pipeline
+h. Main testing file
+
+2. Data Transformation Pipeline
+
+a. Config.yaml
+b. Constant file
+c. Config entity 
+d. Artifact entity
+e. Helper functions
+f. Data transformation file
+g. Training pipeline
+h. Main testing file
