@@ -2,7 +2,6 @@
 import os, sys
 from src.exception import CustomException
 from src.constant import *
-from src.logger import logging
 from datetime import datetime
 from src.utils import read_yaml_file
 
@@ -17,7 +16,7 @@ class TrainingPipelineConfig:
             self.artifact_dir = os.path.join(os.getcwd(), 'artifact', f"{datetime.now().strftime('%m%d%Y__%H%m%S')}")
             
         except Exception as e:
-            raise CustomException(e, sys)
+            raise CustomException(e, sys) from e
         
 class DataIngestionConfig:
     def __init__(self,training_pipeline_config:TrainingPipelineConfig):
@@ -52,4 +51,39 @@ class DataIngestionConfig:
             self.test_size=0.2
 
         except Exception as e:
-            raise CustomException(e, sys) 
+            raise CustomException(e, sys) from e
+        
+
+
+class DataTransformationConfig:
+    def __init__(self,training_pipeline_config:TrainingPipelineConfig):
+    # calling training_pipeline_config from config.yaml
+    # accessing the TrainingPipelineConfig class
+        
+        # data transformation config key
+        data_transformation_key = CONFIG_DATA[DATA_TRANSFORMATION_CONFIG_KEY]
+
+        # data transformation dir
+        self.data_transformation_dir = os.path.join(training_pipeline_config.artifact_dir, data_transformation_key[DATA_TRANSFORMATION_DIR])
+
+        # transformation dir
+        self.transformation_dir = os.path.join(self.data_transformation_dir, data_transformation_key[DATA_TRANSFORMATION_DIR_NAME_KEY])
+
+        # transformed train dir
+        self.transformed_train_dir = os.path.join(self.transformation_dir, data_transformation_key[DATA_TRANSFORMATION_TRAIN_DIR_NAME_KEY])
+
+        # transformed test dir
+        self.transformed_test_dir = os.path.join(self.transformation_dir, data_transformation_key[DATA_TRANSFORMATION_TEST_DIR_NAME_KEY])
+
+        # processed dir
+        self.processed_dir = os.path.join(self.data_transformation_dir, data_transformation_key[DATA_TRANSFORMATION_PROCESSED_DIR_KEY])
+
+        # processed object file path
+        self.processed_object_file_path = os.path.join(self.processed_dir, data_transformation_key[DATA_TRANSFORMATION_PROCESSED_FILE_KEY])
+
+        # feature engineering object file path
+        self.feat_engg_obj_file_path = os.path.join(self.processed_dir, data_transformation_key[DATA_TRANSFORMATION_FEAT_ENGG_FILE_KEY])
+
+
+
+

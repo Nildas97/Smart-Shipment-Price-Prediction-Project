@@ -5,17 +5,18 @@ b. Constant file - completed
 c. Config entity - completed
 d. Artifact entity - completed
 e. Helper functions - completed
-f. Data ingestion file
-g. Training pipeline
-h. Main testing file
+f. Data ingestion file - completed
+g. Training pipeline - completed
+h. Main.py testing file - completed
 
 2. Data Transformation Pipeline
 
-a. Config.yaml
-b. Constant file
-c. Config entity 
-d. Artifact entity
-e. Helper functions
-f. Data transformation file
-g. Training pipeline
-h. Main testing file
+a. Config.yaml - completed
+b. schema.yaml - completed
+c. Constant file - completed
+d. Config entity - completed 
+e. Artifact entity - completed
+f. Helper functions - completed
+g. Data transformation file - completed
+h. Training pipeline - completed
+i. Main.py testing file - completed

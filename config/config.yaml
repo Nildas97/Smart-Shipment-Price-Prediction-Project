@@ -2,6 +2,8 @@ training_pipeline_config:
   pipeline_name: artifact
   artifact_dir: artifact
 
+# artifact/ data_ingestion/ raw_data & ingested_data/ train & test
+
 data_ingestion_config:
   database_name: Machine_Learning
   collection_name: Dataset
@@ -10,4 +12,14 @@ data_ingestion_config:
   ingested_data_dir: ingested_data
   ingested_train_dir: train
   ingested_test_dir: test
-  
+
+# data_transformation/ transformed_data/ train & test
+
+data_transformation_config:
+  data_transformation_dir: data_transformation
+  transformed_dir: transformed_data
+  transformed_train_dir: train
+  transformed_test_dir: test
+  processed_dir: processed_data
+  processed_object_file_name: processed.pkl
+  feature_engg_file: feature_engg.pkl
